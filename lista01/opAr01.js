@@ -38,6 +38,5 @@ console.log(media)
 
 //5
 let cel = 30
-
 let fah =(cel * 9/5) +32
 console.log(cel)
