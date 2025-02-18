@@ -54,10 +54,10 @@ do{
 } while (algoritimo <= 5)
 
 //6
-let resposta 
+let resp
 do{
-    resposta = prompt ("Deseja continuar? Digite s para SIM e n para NÃO.")
-    if (resposta == "s"){
+    resp = prompt ("Deseja continuar? Digite s para SIM e n para NÃO.")
+    if (resp == "s"){
         let num2 = Number(prompt("Digite 2 numeros para a soma:"))
         let num3 = Number(prompt("Digite 2 numeros para a soma:"))
         let soma = num2 + num3
@@ -66,4 +66,4 @@ do{
     else {
         console.log("Nao foi possivel.")
     }
-} while (resposta == "s")
+} while (resp == "s")
