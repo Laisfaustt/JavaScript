@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="texto">texto antigo</p>
+    <button onclick="mudartexto()">clique</button>
+    <button onclick="mudarcor()">cor</button>
+
+    <input type="text" id="campo" oninput="trocarfundo()">
+    
+    <img src="italia.webp" alt="" onmouseover="troca()" onmouseleave="destroca()" id="imagem">
+
+    <p id="mensagem" onmouseover="outrotexto()" onmouseleave="voltatexto">passe o mouse</p>
+
+    <p id="sumir">esse texto vai sumir</p>
+    <button onclick="aparecer()">ocultar e mostrar texto</button>
+
+    <button onclick="aleatorio()">alternar tamanho</button>
+    <p id="tamanho">esse texto vai mudar de tamanho</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
