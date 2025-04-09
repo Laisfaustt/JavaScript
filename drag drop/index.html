@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #area{
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        #caixa{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(104, 104, 255);
+            color: rgb(255, 255, 255);
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" ondrop="soltar(event)" ondragover="permitirSoltar(event)">solte aqui</div>
+    <div id="caixa" draggable="true" ondragstart="comecarArrastar(event)">arraste-me</div>
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay></video>
+    <select id="filtro">
+        <option value="none">nenhum</option>
+        <option value="grayscale(100%)">preto e branco</option>
+        <option value="sepia(100%)">sepia</option>
+        <option value="blur(5px)">desfoque</option>
+        <option value="invert(100%)">inverter</option>
+    </select>
+    <button id="capturar">tirar foto</button>
+    <canvas style="display: none;"></canvas>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
