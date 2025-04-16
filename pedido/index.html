@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(rgb(117, 2, 248), rgb(32, 1, 68));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .btn{
+            background-color: black;
+            font: 300 30px "Arial";
+            padding: 15px 30px;
+            border-radius: 15px;
+            border: none;
+            color: aliceblue;
+            transition: ease-in-out 0.4s;
+            width: 200px;
+        }
+        .tituloPrincipal{
+            font: 700px 40px "Arial";
+            color: aliceblue;
+        }
+        .titulo{
+            text-align: center;
+            margin: 20px 0;
+        }
+        .botoes{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        <h1 class="tituloPrincipal">vamos fazer uma curso do senai?</h1>
+    </div>
+
+    <div class="botoes">
+        <div class="botaoS">
+            <button class="btn" onclick="sim()">sim</button>
+        </div>
+    
+        <div class="botaoN">
+            <button class="btn" id="btn" onclick="desvia()" onmouseover="desvia()">nao</button>
+        </div>
+    </div>
+    <script>
+        function sim (){
+            window.location.href=""
+        }
+        function desvia(){
+            let btn = document.getElementById("btn")
+            btn.style.position = "absolute"
+            btn.style.bottom = gerarPosicao(10,80)
+            btn.style.left = gerarPosicao(10,80)
+        }
+        function gerarPosicao(min, max){
+            return(Math.random() * (max-min)+min)+"%"
+        }
+    </script>
+</body>
+</html>
