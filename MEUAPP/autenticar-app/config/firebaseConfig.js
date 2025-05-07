@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics } from "firebase/auth";
 
 const firebaseConfig = {
 apikey: "AIzaSyB2jNawT7uC4qvDf1_wmSh5I03nR1vReGY",
@@ -12,5 +12,5 @@ measurementId: "G-OVTZLK00P8"
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const autenticacao = getAnalytics(app);
 
