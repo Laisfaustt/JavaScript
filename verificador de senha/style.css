@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #232424;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+.container {
+    background: rgb(243, 243, 243);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.699);
+}
+
+input{
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.forcadaSenha{
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 6px;
+
+}
+
+.fraca {
+    color: #b13e3c;
+    background-color: #f2dede;
+    border-radius: 20px;
+    padding: 10px;
+    
+}
+
+.media {
+    color: #8a6017;
+    background-color: #fcf8e3;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.forte {
+    color: #3f8841;
+    background-color: #dff0d8;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.resultado{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.criterios{
+    color: #646464;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 40px;
+   
+}
+
+.criterios li {
+    margin: 5px 0;
+}

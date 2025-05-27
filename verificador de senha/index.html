@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css"/>
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="container" data-aos="flip-left" data-aos-duration="2000">
+    <h2>Verifique a sua Senha</h2>
+    <input type="password" id="senha" placeholder="Digite sua senha" oninput="verificarSenha()" />
+    <div id="resultado" class="forcadaSenha"></div>
+    <ul class="criterios">
+    <li>Pelo menos 8 caracteres</li>
+    <li>Letras maiúsculas e minúsculas</li>
+    <li>Números</li>
+    <li>Caracteres especiais (!@#$%^&*)</li>
+  </ul>
+  </div>
+
+  
+
+  <script src="index.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init(); </script>
+  
+</body>
+</html>
