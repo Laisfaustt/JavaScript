@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contagem Regressiva</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <h1 class="neon-text">FUTURECOM</h1>
+  <h2>Prepare-se!</h2>
+
+  <div id="contador">
+    <p id="dias"></p>
+    <p id="horas"></p>
+    <p id="minutos"></p>
+    <p id="segundos"></p>
+  </div>
+
+  <div id="progressoCaixa" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+    <div id="progresso"></div>
+  </div>
+
+  <audio id="som" src="song.mp3" preload="auto"></audio>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init(); 
+  </script>
+
+  <script>
+    const dataInicio = new Date(); 
+    const dataAlvo = new Date(2025, 8, 30); 
+    const duracaoTotal = dataAlvo - dataInicio;
+
+    function atualizarContador() {
+      const agora = new Date();
+      const diferenca = dataAlvo - agora;
+
+      if (diferenca <= 0) {
+        document.getElementById("contador").innerHTML = "<p>O evento começou!</p>";
+        document.getElementById("progresso").style.width = "100%";
+        document.getElementById("som").play();
+        clearInterval(intervalo);
+        return;
+      }
+
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+      document.getElementById("dias").textContent = "Dias: " + String(dias).padStart(2, '0');
+      document.getElementById("horas").textContent = "Horas: " + String(horas).padStart(2, '0');
+      document.getElementById("minutos").textContent = "Minutos: " + String(minutos).padStart(2, '0');
+      document.getElementById("segundos").textContent = "Segundos: " + String(segundos).padStart(2, '0');
+
+      const decorrido = agora - dataInicio;
+      const porcentagem = Math.min(100, (decorrido / duracaoTotal) * 100).toFixed(2);
+      document.getElementById("progresso").style.width = porcentagem + "%";
+    }
+
+    atualizarContador();
+    const intervalo = setInterval(atualizarContador, 1000);
+  </script>
+</body>
+</html>
