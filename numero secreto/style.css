@@ -1,0 +1,64 @@
+body {
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(#87ceeb, #fce570);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url(fundobob.jpg);
+      background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+  
+}
+
+.container {
+  background-color: #fffacd;
+  border: 5px dashed #ffcc00;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px #000;
+  width: 350px;
+}
+
+h1 {
+  color: #ff8800;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}
+
+#tryButton {
+  background-color: #ffcc00;
+}
+
+#resetButton {
+  background-color: #add8e6;
+}
+
+#feedback {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#history, #attemptCount {
+  margin-top: 15px;
+  font-size: 16px;
+}
