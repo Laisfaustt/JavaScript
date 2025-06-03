@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <title>loja de maquiagem</title>
+</head>
+<body>
+
+  <h2>Dolce&Gabbana</h2>
+
+  <div class="produtos">
+    <div class="produto">
+      <img src="img/1.png" alt="pó">
+      <h3>Pó Compacto Dolce&Gabbana</h3>
+      <p>R$429.00</p>
+      <button onclick="adicionarItem('pó', 429.00)">Adicionar</button>
+    </div>
+    <div class="produto">
+      <img src="img/2.png" alt="batom">
+      <h3>Batom My Juicy Sheer</h3>
+      <p>R$319.00</p>
+      <button onclick="adicionarItem('batom', 319.00)">Adicionar</button>
+    </div>
+    <div class="produto">
+      <img src="img/3.png" alt="base">
+      <h3>Base Everlast</h3>
+      <p>R$415.00</p>
+      <button onclick="adicionarItem('base', 415.00)">Adicionar</button>
+    </div>
+    <div class="produto">
+      <img src="img/4.png" alt="batomLiquido">
+      <h3>Batom Líquido Everkiss</h3>
+      <p>R$320.00</p>
+      <button onclick="adicionarItem('batomLiquido', 320.00)">Adicionar</button>
+    </div>
+    <div class="produto">
+      <img src="img/5.png" alt="baseblue">
+      <h3>Base Blueberry Nutri Tint</h3>
+      <p>R$429.00</p>
+      <button onclick="adicionarItem('baseblue', 429.00)">Adicionar</button>
+    </div>
+    <div class="produto">
+      <img src="img/6.png" alt="baseacentinado">
+      <h3>Batom Acetinado</h3>
+      <p>R$194.00</p>
+      <button onclick="adicionarItem('baseacentinado', 194.00)">Adicionar</button>
+    </div>
+  </div>
+
+  <h3 class="tituloSelecionados">Itens Selecionados:</h3>
+  <ul id="listarItens"></ul>
+
+  <h3>Total: R$ <span id="total">0.00</span></h3>
+  <div class="brinde" id="brindeMensagem"></div>
+
+  <button class="limpar" onclick="limparTudo()">Limpar Compra</button>
+  <button class="finalizar" onclick="mostrarFinalizacao()">Finalizar Compra</button>
+
+  <div class="finalizacao" id="areaFinalizacao">
+    <label for="valorPago">Valor Pago (R$):</label>
+    <input type="number" id="valorPago" placeholder="Digite o valor pago" />
+
+    <button class="finalizar" onclick="calcularTroco()">Confirmar Pagamento</button>
+
+    <div class="mensagemFinal" id="mensagemFinal"></div>
+  </div>
+
+  <script>
+    let total = 0;
+    let listaProdutos = [];
+
+    function adicionarItem(produto, preco) {
+      total += preco;
+      listaProdutos.push(`${produto} - R$${preco.toFixed(2)}`);
+
+      const lista = document.getElementById("listarItens");
+      const item = document.createElement("li");
+      item.textContent = listaProdutos[listaProdutos.length - 1];
+      lista.appendChild(item);
+
+      document.getElementById("total").textContent = total.toFixed(2);
+
+      if (total > 890) {
+        document.getElementById("brindeMensagem").textContent = "🎁 Parabéns! Você ganhou um brinde surpresa!";
+      } else {
+        document.getElementById("brindeMensagem").textContent = "";
+      }
+    }
+
+    function limparTudo() {
+      total = 0;
+      listaProdutos = [];
+      document.getElementById("listarItens").innerHTML = "";
+      document.getElementById("total").textContent = "0.00";
+      document.getElementById("brindeMensagem").textContent = "";
+      document.getElementById("areaFinalizacao").style.display = "none";
+      document.getElementById("mensagemFinal").textContent = "";
+      document.getElementById("valorPago").value = "";
+    }
+
+    function mostrarFinalizacao() {
+      if (total === 0) {
+        alert("Adicione algum produto antes de finalizar!");
+        return;
+      }
+      document.getElementById("areaFinalizacao").style.display = "block";
+    }
+
+    function calcularTroco() {
+      const valorPago = parseFloat(document.getElementById("valorPago").value);
+      const mensagemFinal = document.getElementById("mensagemFinal");
+
+      if (isNaN(valorPago) || valorPago < total) {
+        mensagemFinal.textContent = "⚠️ Valor insuficiente para concluir a compra.";
+        return;
+      }
+
+      const troco = valorPago - total;
+      mensagemFinal.innerHTML = `
+        Compra finalizada com sucesso!<br>
+        Troco: R$ ${troco.toFixed(2)}<br>
+        ${total > 150 ? "Você receberá um brinde especial!" : ""}
+      `;
+    }
+  </script>
+
+</body>
+</html>
