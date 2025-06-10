@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: black;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            display: grid;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+         .container {
+            width: 300px;
+            height: 150px;
+            perspective: 1000px;
+            margin: 20px;
+            align-items: center;
+
+        }
+        .cartao {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .cartao.virado {
+            transform: rotateY(180deg);
+        }
+        
+        .verso{
+            background-color: green;
+            transform: rotateY(180deg);
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #mensagemVerso1{
+            background-image: url(1.png);
+        }
+        #mensagemVerso2{
+            background-image: url(2.png);
+        }
+        #mensagemVerso3{
+            background-image: url(4.png);
+        }
+        #mensagemVerso4{
+            background-image: url(5.png);
+        }
+        #mensagemVerso5{
+            background-image: url(6.png);
+        }
+        #mensagemVerso6{
+            background-image: url(3.png);
+        }
+        #mensagemVerso7{
+            background-image: url(7.png);
+        }
+        #mensagemVerso8{
+            background-image: url(8.png);
+        }
+        #mensagemVerso9{
+            background-image: url(9.png);
+        }
+        #mensagemVerso10{
+            background-image: url(10.png);
+        }
+        
+        .frente1{
+            background-color: rgb(138, 236, 228);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frente2{
+            background-color: rgb(245, 70, 70);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .frente3{
+            background-color: rgb(245, 234, 135);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frente4{
+            background-color: rgb(236, 138, 187);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frente5{
+            background-color: rgb(138, 180, 236);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frente6{
+            background-color: rgb(138, 236, 159);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frente7{
+            background-color: rgb(236, 190, 138);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frente8{
+            background-color: rgb(138, 208, 236);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frente9{
+            background-color: rgb(236, 169, 138);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frente10{
+            background-color: rgb(236, 213, 138);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        </style>
+</head>
+<body>
+    
+    
+    <div class="container">
+        <div class="cartao" id="cartao1">
+            <div class="frente1">Feliz Aniversário</div>
+            <div class="verso" id="mensagemVerso1" >
+                </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao2">
+            <div class="frente2">Feliz Natal</div>
+            <div class="verso" id="mensagemVerso2"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao3">
+            <div class="frente3">Feliz dia das Mães</div>
+            <div class="verso" id="mensagemVerso3"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao4">
+            <div class="frente4">Feliz dia dos namorados</div>
+            <div class="verso" id="mensagemVerso4"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao5">
+            <div class="frente5">Feliz Ano Novo </div>
+            <div class="verso" id="mensagemVerso5"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao6">
+            <div class="frente6">Feliz Páscoa</div>
+            <div class="verso" id="mensagemVerso6"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao7">
+            <div class="frente7">Feliz dia do Professor</div>
+            <div class="verso" id="mensagemVerso7"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao8">
+            <div class="frente8">Me desculpa?</div>
+            <div class="verso" id="mensagemVerso8"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao9">
+            <div class="frente9">Continue, você consegue</div>
+            <div class="verso" id="mensagemVerso9"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao" id="cartao10">
+            <div class="frente10">Vem pro Arraial</div>
+            <div class="verso" id="mensagemVerso10"></div>
+        </div>
+    </div>
+
+
+    <script>
+      document.getElementById("cartao1").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao2").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao3").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao4").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao5").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao6").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao7").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao8").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao9").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+
+    document.getElementById("cartao10").addEventListener("click", function () {
+      this.classList.toggle("virado");
+    });
+    </script>
+</body>
+</html>
