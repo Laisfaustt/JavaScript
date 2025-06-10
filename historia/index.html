@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: url(ilha.png);
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            display: grid;
+            flex-wrap: wrap;
+            gap: 50px;
+        
+        }
+        h1{
+            font-size: 70px;
+            text-align: center;
+            color: #024941
+        }
+
+        p{
+            font-size: 20px;
+        }
+        #historia {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px #01554b91;
+            align-items: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #00796b;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+
+  <h1>🏝️ Ilha Deserta</h1>
+
+  <div id="historia">
+    <p>Você acorda em uma praia desconhecida após um naufrágio. Está sozinho. O que deseja fazer?</p>
+    <button onclick="escolha1('explorar')">Explorar a ilha </button>
+    <button onclick="escolha1('ficar')">Ficar na praia </button>
+  </div>
+
+  <script>
+    function escolha1(opcao) {
+      const div = document.getElementById("historia");
+      if (opcao === "explorar") {
+        div.innerHTML = `
+          <p>Você adentra a floresta e encontra uma trilha dividida. Para onde vai?</p>
+          <button onclick="escolha2('montanha')">Subir a montanha </button>
+          <button onclick="escolha2('rio')">Seguir o rio </button>
+        `;
+      } else {
+        div.innerHTML = `
+          <p>Você decide esperar por ajuda, mas o sol é forte e você está com sede.</p>
+          <button onclick="escolha2('buscarAgua')">Buscar água </button>
+          <button onclick="escolha2('esperar')">Esperar mais um pouco </button>
+        `;
+      }
+    }
+
+    function escolha2(opcao) {
+      const div = document.getElementById("historia");
+      switch(opcao) {
+        case "montanha":
+          div.innerHTML = `
+            <p>Do topo da montanha, você vê fumaça ao norte e uma caverna ao sul. Para onde vai?</p>
+            <button onclick="escolha3('fogo')">Ir até a fumaça </button>
+            <button onclick="escolha3('caverna')">Explorar a caverna </button>
+          `;
+          break;
+        case "rio":
+          div.innerHTML = `
+            <p>Você encontra um barco preso entre as pedras.</p>
+            <button onclick="escolha3('consertar')">Tentar consertar o barco </button>
+            <button onclick="escolha3('voltar')">Voltar para a praia </button>
+          `;
+          break;
+        case "buscarAgua":
+          div.innerHTML = `
+            <p>Você encontra um coqueiro com cocos. O que deseja fazer?</p>
+            <button onclick="escolha3('subirCoqueiro')">Subir no coqueiro </button>
+            <button onclick="escolha3('procurarRiacho')">Procurar um riacho </button>
+          `;
+          break;
+        case "esperar":
+          div.innerHTML = `
+            <p>Você esperou demais e desmaiou de exaustão. Um barco passou, mas você não viu. FIM 💤</p>
+          `;
+          break;
+      }
+    }
+
+    function escolha3(opcao) {
+      const div = document.getElementById("historia");
+      switch(opcao) {
+        case "fogo":
+          div.innerHTML = `<p>Era outro sobrevivente! Vocês se unem e constroem uma jangada. Dias depois, são resgatados! FINAL FELIZ</p>`;
+          break;
+        case "caverna":
+          div.innerHTML = `<p>Você encontra abrigo e comida na caverna. Consegue sobreviver por semanas até um avião passar e te ver. FINAL FELIZ</p>`;
+          break;
+        case "consertar":
+          div.innerHTML = `<p>Você repara o barco e navega até ser encontrado por pescadores. FINAL FELIZ</p>`;
+          break;
+        case "voltar":
+          div.innerHTML = `<p>Ao voltar, você escorrega e machuca o tornozelo. Incapaz de andar, acaba ficando preso na ilha. FIM </p>`;
+          break;
+        case "subirCoqueiro":
+          div.innerHTML = `<p>Você cai do coqueiro e se machuca. Fica impossibilitado de buscar ajuda. FIM </p>`;
+          break;
+        case "procurarRiacho":
+          div.innerHTML = `<p>Você encontra água fresca e um sinal de civilização! É salvo dias depois. FINAL FELIZ </p>`;
+          break;
+      }
+    }
+  </script>
+
+</body>
+</html>
