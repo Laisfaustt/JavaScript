@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Edu+QLD+Hand:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin-top: 300px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            font-size: 20px;
+            background-color: rgb(32, 32, 32);
+            color: white;
+            
+        }
+         button {
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        #foto {
+            margin-top: 20px;
+            display: none;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jukebox</h1>
+    <p>Selecione como você está se sentindo e ouça uma música</p>
+
+    <button onclick="tocar('alegre')">Alegre 😄</button>
+    <button onclick="tocar('triste')">Triste 😢</button>
+    <button onclick="tocar('aventura')">Aventura 🏞️</button>
+    <button onclick="tocar('romantica')">Romântica ❤️</button>
+    <button onclick="tocar('medo')">Medo 👻</button>
+    <button onclick="tocar('calma')">Calma 🌿</button>
+    <button onclick="tocar('animada')">Animada ⚡</button>
+    <button onclick="tocar('curiosa')">Curiosa 🕵️</button>
+    <button onclick="parar()">Parar 🔇</button>
+
+    <div id="musicaNome"></div>
+    <img src="" id="foto" style="display: none; width: 200px; margin-top: 20px;">
+    <audio id="audio" controls style="display: none; margin-top: 20px;"></audio>
+
+    <script>
+        function tocar(tema) {
+            const audio = document.getElementById("audio");
+            const foto = document.getElementById("foto");
+
+            let musica = "";
+            let imagem = "";
+            let cor = "";
+
+            if (tema === "alegre") {
+                musica = "musicaAlegre.mp3";
+                imagem = "https://cdn.pixabay.com/photo/2016/08/21/19/27/emoticon-1610573_1280.png";
+                cor = "#f2d954";
+
+            } else if (tema === "triste") {
+                musica = "musicaTriste.mp3";
+                imagem = "https://cdn.pixabay.com/photo/2020/02/07/13/54/emoji-4827231_1280.png";
+                cor = "#87CEEB";
+
+            } else if (tema === "aventura") {
+                musica = "musicaAventura.mp3";
+                imagem = "img/emoji.png";
+                cor = "#FF8C00";
+
+            } else if (tema === "romantica") {
+                musica = "musicaAmor.mp3";
+                imagem = "https://cdn.pixabay.com/photo/2020/02/07/12/54/emoji-4827090_960_720.png";
+                cor = "#FF69B4";
+
+            } else if (tema === "medo") {
+                musica = "musicaMedo.mp3";
+                imagem = "https://cdn.pixabay.com/photo/2020/02/10/08/56/emoji-4835771_1280.png";
+                cor = "#4B0082";
+
+            } else if (tema === "calma") {
+                musica = "musicaCalma.mp3";
+                imagem = "https://cdn.pixabay.com/photo/2020/02/06/13/43/emoticon-4824368_960_720.png";
+                cor = "#72d472";
+
+            } else if (tema === "animada") {
+                musica = "musicaAnimada.mp3";
+                imagem = "https://cdn.pixabay.com/photo/2020/02/10/11/09/smiley-4836177_960_720.png";
+                cor = "#FF4500";
+
+            } else if (tema === "curiosa") {
+                musica = "musicaCuriosidade.mp3";
+                imagem = "https://cdn.pixabay.com/photo/2020/02/06/13/47/emoticon-4824394_960_720.png";
+                cor = "#708090";
+            }
+
+            document.body.style.backgroundColor = cor;
+            foto.src = imagem;
+            foto.style.display = "block";
+
+            audio.src = musica;
+            audio.style.display = "block";
+            audio.play();
+        }
+
+        function parar() {
+            const audio = document.getElementById("audio");
+            const foto = document.getElementById("foto");
+
+            foto.style.display = "none";
+            audio.pause();
+            audio.currentTime = 0;
+            audio.style.display = "none";
+            document.body.style.backgroundColor = "#ffffff";
+        }
+    </script>
+</body>
+</html>
